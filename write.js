@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-fs.rename('/tmp/hello', (err) => {
+fs.rename('./butts/text.txt', '.butts/thiswaschanged.txt', (err) => {
   if (err) throw err;
-  console.log('successfully deleted /tmp/hello');
+  console.log('successfully renamed stuff');
 });
