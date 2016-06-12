@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "firebase": "^3.0.4"
+    "firebase": "^3.0.4",
+    "jsonfile": "^2.3.1"
   },
   "devDependencies": {},
   "scripts": {
