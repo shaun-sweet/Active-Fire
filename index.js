@@ -4,16 +4,18 @@ var app = express();
 var fb = require('./lib/activefire');
 
 var activeFire = new fb.activefire('./service.json', 'https://active-record.firebaseio.com');
-activeFire.newModel('dogggiessss',
-						{ name: 'string',
-							age: 'number',
-							breed: "string"
-							// kittens: 'kitten'
-							})
-// activeFire.create('cat','pee',{
-// 	name: 'fluffers',
-// 	age: 20
-// })
+
+// activeFire.newModel('vivian',
+// 						{ name: 'string',
+// 							age: 'number',
+// 							breed: "string",
+// 							kittens: 'kitten'
+// 							})
+
+activeFire.newEntry('viviand','katty',{
+	name: 'flufferss',
+	age: 1
+})
 
 app.get('/', function (req, res) {
   res.sendfile('index.html');
