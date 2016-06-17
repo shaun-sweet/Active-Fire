@@ -1,0 +1,1 @@
+{"dogs":{"_dependencies":{},"_ref":"/dogs","properties":{"name":{"name":"name","type":"string"},"age":{"name":"age","type":"number"},"breed":{"name":"breed","type":"string"}}}}
