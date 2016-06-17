@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 var fb = require('./lib/activefire');
 
-var activeFire = new fb.activefire('./service.json', 'https://active-record.firebaseio.com');
+var activeFire = new fb.activefire('./env/service.json', 'https://active-record.firebaseio.com');
 
 // activeFire.newModel('vivian',
 // 						{ name: 'string',
