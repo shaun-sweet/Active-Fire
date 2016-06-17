@@ -12,9 +12,9 @@ var activeFire = new fb.activefire('./service.json', 'https://active-record.fire
 // 							kittens: 'kitten'
 // 							})
 
-activeFire.newEntry('vivian','kat',{
-	name: 'fluffers',
-	age: 20
+activeFire.newEntry('viviand','katty',{
+	name: 'flufferss',
+	age: 1
 })
 
 app.get('/', function (req, res) {
