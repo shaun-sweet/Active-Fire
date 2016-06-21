@@ -1,11 +1,24 @@
 "use strict";
 var express = require('express');
 var app = express();
-var fb = require('./lib/activefire');
+var fb = require('./lib/ActiveFire');
+var Base = require('./lib/Base')
 
-var activeFire = new fb.activefire('./ENV/service.json', 'https://active-record.firebaseio.com');
 
-generateModels();
+var activeFire = new fb('./ENV/service.json', 'https://active-record.firebaseio.com');
+var base = new activeFire.base();
+class User extends activeFire.base {
+  constructor(){
+    super()
+  }
+
+
+}
+var u = new User('pee');
+
+
+// generateModels();
+generateEntries();
 
 app.get('/', function (req, res) {
   res.sendfile('index.html');
@@ -14,6 +27,13 @@ app.get('/', function (req, res) {
 app.listen(3000, function () {
   console.log('IM LISTENING!!!!!!!!!');
 });
+
+// function seed(){
+// 	return new Promise((resolve,reject)=>{
+// 		generateModels();
+// 		resolve();
+// 	})
+// }
 function generateModels(){
 	activeFire.newModel('comments',{
 		attributes: {
@@ -33,16 +53,26 @@ function generateModels(){
 			comments: 'has_many'
 		}
 	})
+}
 
-}	
+
 
 function generateEntries(){
-	activeFire.newEntry('commentss', 'comment3', {
+	u.create('comments', {
 		user: 'vivian',
 		body: 'this is vivians fucking comment'
 	})
 
-	activeFire.newEntry('users','vivian',{
-		username: 'vivian',
-	})
+	// activeFire.newEntry('users', {
+	// 	username: 'shaun'
+	// })
+  //
+	// activeFire.newEntry('comments', {
+	// 	user: 'shaun',
+	// 	body: 'this is shauns fucking comment'
+	// })
+  //
+	// activeFire.newEntry('users', {
+	// 	username: 'vivian',
+	// })
 }
