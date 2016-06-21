@@ -5,23 +5,39 @@ var fb = require('./lib/activefire');
 
 var activeFire = new fb.activefire('./ENV/service.json', 'https://active-record.firebaseio.com');
 
+generateModels();
 
+app.get('/', function (req, res) {
+  res.sendfile('index.html');
+});
 
-
-
-generateModels(){
+app.listen(3000, function () {
+  console.log('IM LISTENING!!!!!!!!!');
+});
+function generateModels(){
 	activeFire.newModel('comments',{
-		user: 'string',
-		body: 'string'
+		attributes: {
+			user: 'string',
+			body: 'string',
+		},
+		relationships: {
+			users: 'belongs_to'
+		}
 	})
 
 	activeFire.newModel('users',{
-		username: 'string'
+		attributes: {
+			username: 'string'
+		},
+		relationships: {
+			comments: 'has_many'
+		}
 	})
-}
 
-generateEntries(){
-	activeFire.newEntry('comments', 'comment3', {
+}	
+
+function generateEntries(){
+	activeFire.newEntry('commentss', 'comment3', {
 		user: 'vivian',
 		body: 'this is vivians fucking comment'
 	})
@@ -30,10 +46,3 @@ generateEntries(){
 		username: 'vivian',
 	})
 }
-app.get('/', function (req, res) {
-  res.sendfile('index.html');
-});
-
-app.listen(3000, function () {
-  console.log('IM LISTENING!!!!!!!!!');
-});
