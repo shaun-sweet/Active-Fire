@@ -1,9 +1,20 @@
 "use strict";
 var express = require('express');
 var app = express();
-var fb = require('./lib/activefire');
+var fb = require('./lib/ActiveFire');
+var Base = require('./lib/Base')
 
-var activeFire = new fb.activefire('./ENV/service.json', 'https://active-record.firebaseio.com');
+
+var activeFire = new fb('./ENV/service.json', 'https://active-record.firebaseio.com');
+var base = new activeFire.base();
+class User extends activeFire.base {
+  constructor(){
+    super()
+  }
+
+
+}
+var u = new User('pee');
 
 
 // generateModels();
@@ -42,16 +53,26 @@ function generateModels(){
 			comments: 'has_many'
 		}
 	})
-
 }
 
+
+
 function generateEntries(){
-	activeFire.newEntry('comments', {
+	u.create('comments', {
 		user: 'vivian',
 		body: 'this is vivians fucking comment'
 	})
 
-	activeFire.newEntry('users', {
-		username: 'vivian',
-	})
+	// activeFire.newEntry('users', {
+	// 	username: 'shaun'
+	// })
+  //
+	// activeFire.newEntry('comments', {
+	// 	user: 'shaun',
+	// 	body: 'this is shauns fucking comment'
+	// })
+  //
+	// activeFire.newEntry('users', {
+	// 	username: 'vivian',
+	// })
 }
