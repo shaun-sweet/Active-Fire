@@ -3,16 +3,29 @@ var express = require('express');
 var app = express();
 var User = require('./models/user')
 var Comment = require('./models/comment')
+var config = require('./config')
 
-var user = new User('pee');
+var activeFire = config.activeFire;
+var user = new User();
 var comment = new Comment();
+
 // generateModels();
 generateEntries();
 
 function generateEntries(){
-	user.create('users', {
-		username: 'shaun',
+	user.create({
+		username: 'vivian',
 	})
+
+  comment.create({
+    body: "this is a fucking comment",
+    user: 'shaun'
+  })
+
+  comment.create({
+    body: 'this is vivians comment',
+    user: 'vivian'
+  })
 }
 app.get('/', function (req, res) {
   res.sendfile('index.html');
