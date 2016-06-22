@@ -3,7 +3,8 @@ var activeFire = config.activeFire;
 
 class User extends activeFire.base {
   constructor(){
-    super()
+    super();
+    this.modelName = 'users';
   }
 
 }

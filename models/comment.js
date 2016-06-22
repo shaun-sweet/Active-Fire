@@ -3,7 +3,8 @@ var activeFire = config.activeFire;
 
 class Comment extends activeFire.base {
   constructor(){
-    super()
+    super();
+    this.modelName = 'comments';
   }
 
 }
