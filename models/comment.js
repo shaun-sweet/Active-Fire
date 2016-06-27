@@ -5,6 +5,7 @@ class Comment extends activeFire.base {
   constructor(){
     super();
     this.modelName = 'comments';
+    
   }
 
 }
