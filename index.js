@@ -8,24 +8,35 @@ var config = require('./config')
 var activeFire = config.activeFire;
 var user = new User();
 var comment = new Comment();
+// comment
 
 // generateModels();
-generateEntries();
+// generateEntries();
+
+var x = comment.create("this doesn't work",{
+  body: "this is a fucking comment",
+  user: 'shaun',
+})
+console.log(x.body);
 
 function generateEntries(){
-	user.create({
-		username: 'vivian',
+
+	user.create('vivian', {
+		username: 'vivians',
 	})
 
-  comment.create({
-    body: "this is a fucking comment",
-    user: 'shaun'
-  })
 
-  comment.create({
-    body: 'this is vivians comment',
-    user: 'vivian'
-  })
+
+  // comment.create({
+  //   body: "this is a fucking comment",
+  //   user: 'shaun',
+  // })
+  //
+  // comment.create({
+  //   body: 'this is vivians comment',
+  //   user: 'vivian'
+  // })
+
 }
 app.get('/', function (req, res) {
   res.sendfile('index.html');
@@ -34,6 +45,8 @@ app.get('/', function (req, res) {
 app.listen(3000, function () {
   console.log('IM LISTENING!!!!!!!!!');
 });
+
+
 
 function generateModels(){
 	activeFire.newModel('comments',{
