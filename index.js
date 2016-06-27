@@ -13,11 +13,13 @@ var comment = new Comment();
 // generateModels();
 // generateEntries();
 
-var x = comment.create("this doesn't work",{
+
+User.create("this doesn't work",{
   body: "this is a fucking comment",
   user: 'shaun',
 })
-console.log(x.body);
+// var u = new User({})
+// console.log(x.body);
 
 function generateEntries(){
 
