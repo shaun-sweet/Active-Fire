@@ -8,16 +8,15 @@ var config = require('./config')
 var activeFire = config.activeFire;
 var user = new User();
 var comment = new Comment();
-// comment
+
 
 // generateModels();
 // generateEntries();
 
 
-User.create("this doesn't work",{
+comment.create("this doesn't work",{
   body: "this is a fucking comment",
-  user: 'shaun',
-})
+  user: 'shaun', })
 // var u = new User({})
 // console.log(x.body);
 
