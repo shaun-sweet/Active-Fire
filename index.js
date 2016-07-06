@@ -13,19 +13,28 @@ var comment = new Comment();
 // generateModels();
 // generateEntries();
 
-
-comment.create("this doesn't work",{
-  body: "this is a fucking comment",
-  user: 'shaun', })
+var d = user.findBy("username", "vasdfaivians")
+console.log(d);
 // var u = new User({})
 // console.log(x.body);
 
 function generateEntries(){
 
-	user.create('vivian', {
-		username: 'vivians',
+	user.create('vivianafdssadfasd', {
+		username: 'vasdfaivians',
 	})
-
+	user.create('viviandasfasfdsa', {
+		username: 'vivasdfasdians',
+	})
+	user.create('vivianasdfasdfads', {
+		username: 'vivsdfasdfsaians',
+	})
+	user.create('viviafasdfadfan', {
+		username: 'vivdsafdsians',
+	})
+	user.create('viviasdfasdan', {
+		username: 'vivdsfadsfadsians',
+	})
 
 
   // comment.create({
