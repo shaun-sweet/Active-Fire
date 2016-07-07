@@ -12,9 +12,12 @@ var comment = new Comment();
 
 // generateModels();
 // generateEntries();
-
-var d = user.findBy("username", "vasdfaivians")
-console.log(d);
+// user.findBy("username", "vasdfaivians").then((snapshot) => {
+// 	console.log(snapshot);
+// })
+user.find("thiss").then((snapshot) => {
+	console.log(snapshot);
+})
 // var u = new User({})
 // console.log(x.body);
 
