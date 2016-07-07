@@ -28,13 +28,13 @@ user.find("vivian").then((snapshot) => {
 function generateEntries(){
 
 	user.create('jim', {
-		username: 'jimsucks',
+		username: 'jimbob',
 		comments: {
 
 		}
 	})
 	user.create('bib', {
-		username: 'bobsucks',
+		username: 'bib5464',
 	})
 	user.create('shaun', {
 		username: 'ssweet06',
@@ -57,7 +57,7 @@ function generateEntries(){
 
 
   comment.create("comment1", {
-    body: "this is a fucking comment",
+    body: "this is shauns comment",
     user: 'shaun',
   })
   
