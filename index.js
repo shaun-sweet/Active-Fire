@@ -11,44 +11,60 @@ var comment = new Comment();
 
 
 // generateModels();
-// generateEntries();
+generateEntries();
 // user.findBy("username", "vasdfaivians").then((snapshot) => {
 // 	console.log(snapshot);
 // })
-user.find("thiss").then((snapshot) => {
-	console.log(snapshot);
+
+
+
+user.find("vivian").then((snapshot) => {
+	
 })
+
 // var u = new User({})
 // console.log(x.body);
 
 function generateEntries(){
 
-	user.create('vivianafdssadfasd', {
-		username: 'vasdfaivians',
+	user.create('jim', {
+		username: 'jimsucks',
+		comments: {
+
+		}
 	})
-	user.create('viviandasfasfdsa', {
-		username: 'vivasdfasdians',
+	user.create('bib', {
+		username: 'bobsucks',
 	})
-	user.create('vivianasdfasdfads', {
-		username: 'vivsdfasdfsaians',
+	user.create('shaun', {
+		username: 'ssweet06',
+		comments: {
+			comment1: true
+		}
 	})
-	user.create('viviafasdfadfan', {
-		username: 'vivdsafdsians',
+	user.create('vivianita', {
+		username: 'carlos',
+		comments: {
+
+		}
 	})
-	user.create('viviasdfasdan', {
-		username: 'vivdsfadsfadsians',
+	user.create('vivian', {
+		username: 'rules',
+		comments: {
+			comment2: true
+		}
 	})
 
 
-  // comment.create({
-  //   body: "this is a fucking comment",
-  //   user: 'shaun',
-  // })
-  //
-  // comment.create({
-  //   body: 'this is vivians comment',
-  //   user: 'vivian'
-  // })
+  comment.create("comment1", {
+    body: "this is a fucking comment",
+    user: 'shaun',
+  })
+  
+  comment.create("comment2", {
+    body: 'this is vivians comment',
+    user: 'vivian'
+  })
 
 }
 app.get('/', function (req, res) {
@@ -62,6 +78,7 @@ app.listen(3000, function () {
 
 
 function generateModels(){
+
 	activeFire.newModel('comments',{
 		attributes: {
 			user: 'string',
@@ -80,4 +97,5 @@ function generateModels(){
 			comments: 'has_many'
 		}
 	})
+
 }
