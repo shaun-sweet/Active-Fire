@@ -19,7 +19,7 @@ generateEntries();
 
 
 user.find("vivian").then((snapshot) => {
-	
+	snapshot.comments
 })
 
 // var u = new User({})
