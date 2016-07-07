@@ -8,23 +8,36 @@ var config = require('./config')
 var activeFire = config.activeFire;
 var user = new User();
 var comment = new Comment();
-// comment
+
 
 // generateModels();
 // generateEntries();
-
-var x = comment.create("this doesn't work",{
-  body: "this is a fucking comment",
-  user: 'shaun',
+// user.findBy("username", "vasdfaivians").then((snapshot) => {
+// 	console.log(snapshot);
+// })
+user.find("thiss").then((snapshot) => {
+	console.log(snapshot);
 })
-console.log(x.body);
+// var u = new User({})
+// console.log(x.body);
 
 function generateEntries(){
 
-	user.create('vivian', {
-		username: 'vivians',
+	user.create('vivianafdssadfasd', {
+		username: 'vasdfaivians',
 	})
-
+	user.create('viviandasfasfdsa', {
+		username: 'vivasdfasdians',
+	})
+	user.create('vivianasdfasdfads', {
+		username: 'vivsdfasdfsaians',
+	})
+	user.create('viviafasdfadfan', {
+		username: 'vivdsafdsians',
+	})
+	user.create('viviasdfasdan', {
+		username: 'vivdsfadsfadsians',
+	})
 
 
   // comment.create({
