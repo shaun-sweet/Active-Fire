@@ -68,26 +68,26 @@ module.exports = Comment;
 
 ```javascript
 activeFire.newModel('users',{
-		attributes: {
-			username: 'string'
-		},
-		relationships: {
-			comments: 'has_many'
-		}
-	})
+	attributes: {
+		username: 'string'
+	},
+	relationships: {
+		comments: 'has_many'
+	}
+})
 ```
 comments belonging to the users:
 
 ```javascript
 activeFire.newModel('comments',{
-		attributes: {
-			user: 'string',
-			body: 'string',
-		},
-		relationships: {
-			users: 'belongs_to'
-		}
-	})
+	attributes: {
+		user: 'string',
+		body: 'string',
+	},
+	relationships: {
+		users: 'belongs_to'
+	}
+})
 ```
 
 
