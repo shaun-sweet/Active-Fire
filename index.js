@@ -12,9 +12,9 @@ var comment = new Comment();
 
 // generateModels();
 generateEntries();
-// user.findBy("username", "vasdfaivians").then((snapshot) => {
-// 	console.log(snapshot);
-// })
+user.findBy("username", "vasdfaivians").then((snapshot) => {
+	console.log(snapshot);
+})
 
 
 user.find("vivian").then((snapshot) => {
@@ -56,8 +56,8 @@ function generateEntries(){
 
 
   comment.create("comment1", {
-    body: "this is shauns comment",
-    user: 'shaun',
+    body: "this is a comment",
+    user: 'ssweet06',
   })
   
   comment.create("comment2", {

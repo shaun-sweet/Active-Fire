@@ -11,8 +11,9 @@ In Development
 
 # Config
 In a separate file add the following: 
-//config.js
+
 ```javascript
+//config.js
 var af = require('activefire')
 module.exports = {activeFive: new af(*service.json*, https://*yourURL*.firebaseio.com)}
 ```
@@ -87,6 +88,41 @@ activeFire.newModel('comments',{
 	relationships: {
 		users: 'belongs_to'
 	}
+})
+```
+
+### Adding Data to Models
+
+```javascript
+var user = new User();
+
+user.create('ssweet06', {
+	username: 'shaun',
+	comments: {
+
+	}
+})
+```
+
+```javascript
+var comment = new Comment();
+comment.create("comment1", {
+  body: "this is a comment",
+  user: 'ssweet06',
+})
+```
+
+### Querying
+
+```javascript
+user.find("ssweet06").then((snapshot) => {
+	//do stuff to the object
+})
+```
+
+```javascript
+user.findBy("username", "shaun").then((snapshot) => {
+	//do stuff to the object
 })
 ```
 
