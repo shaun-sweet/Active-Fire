@@ -2,7 +2,7 @@
 In Development
 
 #Installing
-* npm install firebase-relational-orm
+* npm install activefire
 
 # Setup
 * Download your service.json from google [Instructions here](https://firebase.google.com/docs/server/setup#add_firebase_to_your_app)
