@@ -17,7 +17,6 @@ generateEntries();
 // })
 
 
-
 user.find("vivian").then((snapshot) => {
 	snapshot.comments
 })
